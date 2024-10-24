@@ -1,10 +1,13 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Compiled output
+# Angular specific
 /dist
 /tmp
 /out-tsc
 /bazel-out
+node_modules/
+npm-debug.log
+yarn-error.log
 
 # Node
 /node_modules
@@ -40,3 +43,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

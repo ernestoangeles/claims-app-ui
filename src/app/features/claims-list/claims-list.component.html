@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="header-actions">
+    <h2>Listado de Reclamos</h2>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>CÓDIGO</th>
+        <th>EMPRESA</th>
+        <th>MOTIVO</th>
+        <th>ESTADO</th>
+        <th>VER DETALLE</th>
+        <th>CAMBIAR ESTADO</th>
+        <th>FECHA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let claim of claims">
+        <td>{{ claim.code }}</td>
+        <td>{{ claim.company }}</td>
+        <td>{{ claim.reason }}</td>
+        <td>
+          <span class="status-badge" [class]="claim.status.toLowerCase()">
+            {{ claim.status }}
+          </span>
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="viewDetail(claim.id)">
+            Ver detalle
+          </button>
+        </td>
+        <td>
+          <select class="form-select" (change)="changeStatus($event.target.value, claim)">
+            <option [selected]="claim.status === 'Pendiente'" value="Pendiente">Pendiente</option>
+            <option [selected]="claim.status === 'Resuelto'" value="Resuelto">Resuelto</option>
+            <option [selected]="claim.status === 'Cancelado'" value="Cancelado">Cancelado</option>
+          </select>
+        </td>
+        <td>{{ claim.creationDate | date:'dd/MM/yyyy HH:mm' }}</td>
+      </tr>
+      <tr *ngIf="!claims?.length">
+        <td colspan="7" class="no-data">No hay reclamos registrados</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

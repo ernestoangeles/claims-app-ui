@@ -1,0 +1,19 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>Sistema de Reclamos</h1>
+  </header>
+
+  <div class="main-container">
+    <nav class="sidebar">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active">Consultar Reclamos</a></li>
+        <li><a routerLink="/claims" routerLinkActive="active">Crear Reclamo</a></li>
+        <li><a routerLink="/summary" routerLinkActive="active">Resumen</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

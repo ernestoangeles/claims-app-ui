@@ -1,0 +1,39 @@
+/* claims-list.component.css */
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+  .header-actions h2 {
+    margin: 0;
+  }
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.pendiente {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.en-proceso {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.resuelto {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.no-data {
+  text-align: center;
+  color: #6b7280;
+  padding: 2rem !important;
+}
