@@ -1,0 +1,119 @@
+/* Estilos para tarjetas (card) reutilizables en otras páginas */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilos generales para títulos */
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Estilos comunes para grupos de formularios */
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para etiquetas (labels) en formularios */
+label {
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+/* Mensajes de error en rojo */
+.error-message {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Estilos comunes para inputs, selects y textareas */
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background-color: #f7fafc;
+  margin-top: 0.25rem;
+  color: #2d3748;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Estilos para campos de solo lectura */
+input[readonly] {
+  background-color: #e2e8f0; /* Fondo más claro */
+  color: #4a5568; /* Color del texto */
+  border: 1px solid #cbd5e0; /* Borde más claro */
+  cursor: not-allowed; /* No editable */
+}
+
+/* Alineación y estilo de botones */
+.form-actions {
+  display: flex;
+  justify-content: center; /* Centra los botones */
+  gap: 20px; /* Añade espacio entre los botones */
+  margin-top: 20px;
+}
+
+button {
+  background-color: #4299e1;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #3182ce;
+}
+
+button:disabled {
+  background-color: #cbd5e0;
+  cursor: not-allowed;
+}
+
+/* Estilos secundarios para botones */
+.btn-secondary {
+  background-color: #718096;
+}
+
+.btn-secondary:hover {
+  background-color: #4a5568;
+}
+
+/* Estilos responsivos para mejorar en dispositivos móviles */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  input, select, textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

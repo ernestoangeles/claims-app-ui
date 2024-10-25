@@ -29,7 +29,7 @@ export class ClaimsService {
   }
 
   // Actualizar el estado de un reclamo
-  updateClaimStatus(id: string, status: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${id}/status`, { status });
+  updateClaimStatus(id: string, status: string, agentComment: string, agentEmail: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/${id}/status`, { status, agentComment, agentEmail });
   }
 }

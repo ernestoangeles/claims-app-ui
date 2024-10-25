@@ -10,9 +10,9 @@
         <th>EMPRESA</th>
         <th>MOTIVO</th>
         <th>ESTADO</th>
-        <th>VER DETALLE</th>
-        <th>CAMBIAR ESTADO</th>
         <th>FECHA</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -21,23 +21,17 @@
         <td>{{ claim.company }}</td>
         <td>{{ claim.reason }}</td>
         <td>
-          <span class="status-badge" [class]="claim.status.toLowerCase()">
+          <span class="status-badge" [class]="removeAccents(claim.status)">
             {{ claim.status }}
           </span>
         </td>
-        <td>
-          <button class="btn btn-primary" (click)="viewDetail(claim.id)">
-            Ver detalle
-          </button>
-        </td>
-        <td>
-          <select class="form-select" (change)="changeStatus($event.target.value, claim)">
-            <option [selected]="claim.status === 'Pendiente'" value="Pendiente">Pendiente</option>
-            <option [selected]="claim.status === 'Resuelto'" value="Resuelto">Resuelto</option>
-            <option [selected]="claim.status === 'Cancelado'" value="Cancelado">Cancelado</option>
-          </select>
-        </td>
         <td>{{ claim.creationDate | date:'dd/MM/yyyy HH:mm' }}</td>
+        <td>
+          <button class="btn-edit" (click)="changeStatus(claim.id)">Cambiar Estado</button>
+        </td>
+        <td>
+          <button class="btn-edit" (click)="viewDetail(claim.id)">Ver Detalle</button>
+        </td>
       </tr>
       <tr *ngIf="!claims?.length">
         <td colspan="7" class="no-data">No hay reclamos registrados</td>

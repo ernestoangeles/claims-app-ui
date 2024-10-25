@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClaimsService } from '../../core/services/claims.service';
-import { MasterDataService } from '../../core/services/master-data.service';
 import { Claim } from '../../core/models/claim.model';
 import { Router } from '@angular/router';
+import { ClaimsService } from '../../core/services/claims.service';
+import { MasterDataService } from '../../core/services/master-data.service';
 
 @Component({
   selector: 'app-claim-form',

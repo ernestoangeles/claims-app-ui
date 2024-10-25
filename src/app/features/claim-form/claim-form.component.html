@@ -1,59 +1,3 @@
-<!--<h2>Crear Reclamo</h2>
-<form [formGroup]="claimForm" (ngSubmit)="submitClaim()">
-  <div>
-    <label for="company">Empresa</label>
-    <select id="company" formControlName="company">
-      <option value="">Seleccione una empresa</option>
-      <option *ngFor="let company of companies" [value]="company">
-        {{company}}
-      </option>
-    </select>
-    <div *ngIf="claimForm.get('company')?.invalid && claimForm.get('company')?.touched">
-      <span class="error">La empresa es requerida</span>
-    </div>
-  </div>
-
-  <div>
-    <label for="reason">Motivo</label>
-    <select id="reason" formControlName="reason">
-      <option value="">Seleccione un motivo</option>
-      <option *ngFor="let reason of reasons" [value]="reason">
-        {{reason}}
-      </option>
-    </select>
-    <div *ngIf="claimForm.get('reason')?.invalid && claimForm.get('reason')?.touched">
-      <span class="error">El motivo es requerido</span>
-    </div>
-  </div>
-
-  <div>
-    <label for="description">Descripción</label>
-    <textarea id="description" formControlName="description"></textarea>
-    <div *ngIf="claimForm.get('description')?.invalid && claimForm.get('description')?.touched">
-      <span class="error">La descripción es requerida</span>
-    </div>
-  </div>
-
-  <div>
-    <label for="email">Email</label>
-    <input type="email" id="email" formControlName="email" />
-    <div *ngIf="claimForm.get('email')?.invalid && claimForm.get('email')?.touched">
-      <span class="error">
-        <span *ngIf="claimForm.get('email')?.errors?.['required']">El email es requerido</span>
-        <span *ngIf="claimForm.get('email')?.errors?.['email']">El email no es válido</span>
-      </span>
-    </div>
-  </div>
-
-  <div>
-    <label for="status">Estado</label>
-    <input id="status" formControlName="status" readonly />
-  </div>
-
-  <button type="submit" [disabled]="claimForm.invalid">Crear Reclamo</button>
-</form>-->
-
-
 <div class="card">
   <h2>Crear Nuevo Reclamo</h2>
   <form [formGroup]="claimForm" (ngSubmit)="submitClaim()" class="claim-form">
@@ -66,7 +10,7 @@
         </option>
       </select>
       <div *ngIf="claimForm.get('company')?.invalid && claimForm.get('company')?.touched">
-        <span class="error">La empresa es requerida</span>
+        <span class="error-message">La empresa es requerida</span>
       </div>
     </div>
 
@@ -79,19 +23,16 @@
         </option>
       </select>
       <div *ngIf="claimForm.get('reason')?.invalid && claimForm.get('reason')?.touched">
-        <span class="error">El motivo es requerido</span>
+        <span class="error-message">El motivo es requerido</span>
       </div>
     </div>
 
     <div class="form-group">
       <label for="description">Descripción</label>
-      <textarea id="description"
-                formControlName="description"
-                rows="4"
-                placeholder="Describa el detalle de su reclamo">
+      <textarea id="description" formControlName="description" rows="4" placeholder="Describa el detalle de su reclamo">
       </textarea>
       <div *ngIf="claimForm.get('description')?.invalid && claimForm.get('description')?.touched">
-        <span class="error">La descripción es requerida</span>
+        <span class="error-message">La descripción es requerida</span>
       </div>
     </div>
 
@@ -102,7 +43,7 @@
              formControlName="email"
              placeholder="ejemplo@correo.com" />
       <div *ngIf="claimForm.get('email')?.invalid && claimForm.get('email')?.touched">
-        <span class="error">
+        <span class="error-message">
           <span *ngIf="claimForm.get('email')?.errors?.['required']">El email es requerido</span>
           <span *ngIf="claimForm.get('email')?.errors?.['email']">El email no es válido</span>
         </span>

@@ -20,13 +20,14 @@ interface ApiClaimListItem {
 
 // Interfaces para el frontend
 export interface Claim {
-  id?: string;
+  id: string;
   code: string;
   company: string;
   reason: string;
   description: string;
   status: string;
   customerEmail: string;
+  attachments: string;
   creationDate?: string;
   currentStatus?: string;
 }

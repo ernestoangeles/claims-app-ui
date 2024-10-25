@@ -8,6 +8,8 @@ import { ClaimsListModule } from './features/claims-list/claims-list.module';
 import { ClaimFormModule } from './features/claim-form/claim-form.module';
 import { SummaryModule } from './features/summary/summary.module';
 import { LayoutModule } from './core/layout/layout.module';
+import { ChangeStatusModule } from './features/change-status/change-status.module';
+import { ClaimDetailModule } from './features/claim-detail/claim-detail.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LayoutModule } from './core/layout/layout.module';
     AppRoutingModule,
     ClaimsListModule,
     ClaimFormModule,
-    SummaryModule
+    SummaryModule,
+    ChangeStatusModule,
+    ClaimDetailModule
   ],
   providers: [],
   bootstrap: [AppComponent]

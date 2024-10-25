@@ -1,0 +1,47 @@
+<div class="card">
+  <h2>Cambiar Estado</h2>
+  <form [formGroup]="changeStatusForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="claim-code">Código</label>
+      <input id="claim-code" formControlName="code" readonly />
+    </div>
+
+    <div class="form-group">
+      <label for="claim-status">Estado Actual</label>
+      <select id="claim-status" formControlName="status" required>
+        <!-- Cargar estados dinámicamente sin opción en blanco -->
+        <option *ngFor="let status of statusList" [value]="status">{{ status }}</option>
+      </select>
+      <div *ngIf="changeStatusForm.get('status')?.invalid && changeStatusForm.get('status')?.touched">
+        <span class="error-message">El estado es requerido</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="claim-comment">Comentario del Asesor</label>
+      <textarea id="claim-comment" formControlName="comment" rows="3" placeholder="Añadir comentario"></textarea>
+      <div *ngIf="changeStatusForm.get('comment')?.invalid && changeStatusForm.get('comment')?.touched">
+        <span class="error-message">El comentario es requerido (mínimo 10 caracteres)</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo del Asesor</label>
+      <input type="email"
+             id="email"
+             formControlName="email"
+             placeholder="ejemplo@correo.com" />
+      <div *ngIf="changeStatusForm.get('email')?.invalid && changeStatusForm.get('email')?.touched">
+        <span class="error-message">
+          <span *ngIf="changeStatusForm.get('email')?.errors?.['required']">El email es requerido</span>
+          <span *ngIf="changeStatusForm.get('email')?.errors?.['email']">El email no es válido</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-primary" [disabled]="!changeStatusForm.valid">Guardar</button>
+      <button type="button" class="btn-secondary" (click)="onCancel()">Volver</button>
+    </div>
+  </form>
+</div>

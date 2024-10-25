@@ -6,14 +6,13 @@
   <div class="main-container">
     <nav class="sidebar">
       <ul>
-        <li><a routerLink="/" routerLinkActive="active">Consultar Reclamos</a></li>
-        <li><a routerLink="/claims" routerLinkActive="active">Crear Reclamo</a></li>
-        <li><a routerLink="/summary" routerLinkActive="active">Resumen</a></li>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Consultar Reclamos</a></li>
+        <li><a routerLink="/claims" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Crear Reclamo</a></li>
+        <li><a routerLink="/summary" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Resumen</a></li>
       </ul>
     </nav>
     <div class="content">
       <router-outlet></router-outlet>
     </div>
   </div>
-
 </div>

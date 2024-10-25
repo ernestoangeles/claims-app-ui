@@ -1,0 +1,39 @@
+<div class="card">
+  <h2>Detalle del Reclamo</h2>
+
+  <form class="claim-detail">
+    <div class="form-group">
+      <label for="claim-code">Código</label>
+      <input id="claim-code" type="text" [value]="claim.code" readonly />
+    </div>
+
+    <div class="form-group">
+      <label for="claim-company">Empresa</label>
+      <input id="claim-company" type="text" [value]="claim.company" readonly />
+    </div>
+
+    <div class="form-group">
+      <label for="claim-reason">Motivo del Reclamo</label>
+      <input id="claim-reason" type="text" [value]="claim.reason" readonly />
+    </div>
+
+    <div class="form-group">
+      <label for="claim-description">Descripción</label>
+      <textarea id="claim-description" readonly>{{ claim.description }}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="claim-email">Correo Cliente</label>
+      <input id="claim-email" type="email" [value]="claim.customerEmail" readonly />
+    </div>
+
+    <div class="form-group">
+      <label for="claim-date">Fecha de Creación</label>
+      <input id="claim-date" type="text" [value]="claim.creationDate | date: 'dd/MM/yyyy HH:mm'" readonly />
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn-secondary" (click)="close()">Volver</button>
+    </div>
+  </form>
+</div>
