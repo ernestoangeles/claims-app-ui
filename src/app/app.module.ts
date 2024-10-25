@@ -10,6 +10,7 @@ import { SummaryModule } from './features/summary/summary.module';
 import { LayoutModule } from './core/layout/layout.module';
 import { ChangeStatusModule } from './features/change-status/change-status.module';
 import { ClaimDetailModule } from './features/claim-detail/claim-detail.module';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ClaimDetailModule } from './features/claim-detail/claim-detail.module';
     ClaimFormModule,
     SummaryModule,
     ChangeStatusModule,
-    ClaimDetailModule
+    ClaimDetailModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,6 +18,11 @@
     </div>
 
     <div class="form-group">
+      <label for="claim-reason">Estado</label>
+      <input id="claim-reason" type="text" [value]="claim.status" readonly />
+    </div>
+
+    <div class="form-group">
       <label for="claim-description">Descripción</label>
       <textarea id="claim-description" readonly>{{ claim.description }}</textarea>
     </div>

@@ -1,0 +1,12 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* Evita desbordamientos innecesarios */
+}
+
+.content-area {
+  display: flex;
+  flex: 1;
+  overflow: auto; /* Permite scroll si es necesario, pero evita desbordamientos */
+}

@@ -1,1 +1,52 @@
-<h2>Resumen</h2> <p>Aquí va el resumen de los reclamos.</p>
+<div class="dashboard-container">
+  <!-- Contenedor de gráficos ajustado a dos gráficos por fila -->
+  <div class="charts-container">
+    <div class="charts-row">
+      <!-- Tarjeta de Total Reclamos -->
+      <div class="chart-card">
+        <div class="summary-card">
+          <h3>Total Reclamos</h3>
+          <p class="value">{{totalClaims}}</p>
+        </div>
+      </div>
+
+      <!-- Gráfico por empresa -->
+      <div class="chart-card">
+        <h3>Reclamos por Empresa</h3>
+        <div class="chart-wrapper">
+          <canvas baseChart
+                  [type]="'pie'"
+                  [data]="companyChartData"
+                  [options]="companyChartOptions">
+          </canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <!-- Gráfico por estado -->
+      <div class="chart-card">
+        <h3>Por Estado</h3>
+        <div class="chart-wrapper">
+          <canvas baseChart
+                  [type]="'doughnut'"
+                  [data]="statusChartData"
+                  [options]="statusChartOptions">
+          </canvas>
+        </div>
+      </div>
+
+      <!-- Gráfico por motivo -->
+      <div class="chart-card">
+        <h3>Por Motivo</h3>
+        <div class="chart-wrapper">
+          <canvas baseChart
+                  [type]="'bar'"
+                  [data]="reasonChartData"
+                  [options]="reasonChartOptions">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

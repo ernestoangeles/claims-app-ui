@@ -1,9 +1,9 @@
-<div class="app-container">
+<div class="main-layout">
   <header class="app-header">
     <h1>Sistema de Reclamos</h1>
   </header>
 
-  <div class="main-container">
+  <div class="content-area">
     <nav class="sidebar">
       <ul>
         <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Consultar Reclamos</a></li>
@@ -11,8 +11,9 @@
         <li><a routerLink="/summary" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Resumen</a></li>
       </ul>
     </nav>
-    <div class="content">
+
+    <main class="main-content">
       <router-outlet></router-outlet>
-    </div>
+    </main>
   </div>
 </div>
