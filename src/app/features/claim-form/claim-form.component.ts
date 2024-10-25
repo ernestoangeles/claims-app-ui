@@ -64,4 +64,9 @@ export class ClaimFormComponent implements OnInit {
       });
     }
   }
+
+  // Manejar la acción de cancelar
+  onCancel(): void {
+    this.router.navigate(['/']);
+  }
 }

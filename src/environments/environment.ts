@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8089/api',
+  apiUrl: 'https://claims-api-knmroxasba-uc.a.run.app/api',
   debug: true,
   logApiCalls: true,
   logFormValidation: true,

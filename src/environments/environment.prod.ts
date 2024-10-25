@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://tu-dominio-produccion.com/api',
+  apiUrl: 'https://claims-api-knmroxasba-uc.a.run.app/api',
   debug: false,
   logApiCalls: false,
   logFormValidation: false,

@@ -50,3 +50,6 @@ Thumbs.db
 *.user
 *.userosscache
 *.sln.docstates
+
+/.firebase
+/public

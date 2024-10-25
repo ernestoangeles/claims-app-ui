@@ -18,7 +18,10 @@ export class ClaimsListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Obtener los reclamos al cargar la página
+    this.loadClaims();
+  }
+
+  loadClaims(): void {
     this.claimsService.getClaims().subscribe({
       next: (data) => (this.claims = data),
       error: (err) => console.error('Error al obtener reclamos', err),
@@ -37,5 +40,9 @@ export class ClaimsListComponent implements OnInit {
 
   removeAccents(str: string): string {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-').toLowerCase();
+  }
+
+  refreshClaims(): void {
+    this.loadClaims();
   }
 }
